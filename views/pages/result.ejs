@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+
+<div class="alert alert-success">
+    <strong>Note:</strong>
+    Your body mass index is: 
+    <strong data-testid="bmi"><%= Math.round(bmi * 100) / 100 %></strong>
+</div>
+<div class="category">
+    <strong>Your BMI is in the category of: </strong>
+    <strong data-testid="bmi-category"><%= bmiCategory %></strong>
+</div>
+<div class="waist-to-hip-ratio">
+    <strong>Your waist to hip ratio is in the category of: </strong>
+    <strong data-testid="waist-to-hip-ratio"><%= waistToHipRatio %></strong>
+</div>
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,25 @@
+{
+  "name": "bmi-calculator",
+  "version": "1.0.0",
+  "description": "BMI Calcuator with NodeJS and ExpressJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "ejs",
+    "bmi",
+    "calcuate"
+  ],
+  "author": "Nihad Keric",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "jest": "^23.6.0",
+    "puppeteer": "^1.11.0"
+  }
+}
