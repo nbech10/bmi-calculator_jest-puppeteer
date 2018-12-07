@@ -43,7 +43,7 @@ describe("Acceptance testing, 100% decision coverage", () => {
         await page.goto(APP);
         await page.waitForSelector(".panel-body");
         await page.click("#cm");
-        await page.type("#cm", '0');
+        await page.type("#cm", 'n');
         await page.click("#kg");
         await page.type("#kg", '85');
         await page.select("[data-testid=gender-selector]", "female");
@@ -57,8 +57,23 @@ describe("Acceptance testing, 100% decision coverage", () => {
     });
   });
 
-describe("Acceptance testing, 100% condition coverage", () => {
-
+describe("Acceptance testing, multiple condition coverage", () => {
+    test("False path through the if-statement", async () => {
+        await page.goto(APP);
+        await page.waitForSelector(".panel-body");
+        await page.click("#cm");
+        await page.type("#cm", '0');
+        await page.click("#kg");
+        await page.type("#kg", '85');
+        await page.select("[data-testid=gender-selector]", "female");
+        await Promise.all([
+            page.click("input[type=submit]"),
+            page.waitForNavigation()
+        ]);
+        
+        const mainTitleText = await page.$eval("h1[data-testid=landingPageTitle]", el => el.textContent);
+        expect(mainTitleText).toEqual("BMI - Calculator");
+    });
 });
 
 describe("Test driven development, BMI Categories", () => {
